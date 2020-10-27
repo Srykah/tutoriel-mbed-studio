@@ -38,7 +38,7 @@ Ensuite, rendez-vous sur https://os.mbed.com/studio et **téléchargez** la vers
 
 Une fois ceci fait, vous devriez voir apparaître la fenêtre suivante :
 
-![ecran_d_accueil](captures/écran d'accueil.png)
+![écran d'accueil](captures/ecran_d_accueil.png)
 
 Voici l'explication des différentes zones :
 
@@ -53,7 +53,7 @@ Voici l'explication des différentes zones :
 
 Branchez maintenant la carte à votre PC. (Attention à bien utiliser le port nommé *USB STLink* sur la carte, c'est-à-dire celui des deux le plus proche du bord.) Vous devriez voir apparaître la fenêtre suivante :
 
-![connexion_carte](captures/connexion carte.png)
+![connexion carte](captures/connexion_carte.png)
 
 Cliquez sur "Yes". Dans le panneau inférieur, un nouvel onglet s'affiche : celui-ci contient le **terminal** lié à la carte. Si celle-ci contient déjà un programme, il y a de fortes chances que des messages s'affichent dans le terminal.
 
@@ -63,7 +63,7 @@ Si vous voyez une suite de caractères étranges, il s'agit peut-être d'un prob
 
 Si aucun message ne s'affiche, *pas de panique !* Vous pouvez aussi vérifier que Mbed Studio reconnaît la carte grâce à **l'icône USB verte** à côté du nom de votre carte dans la ligne "Target" de la zone de configuration du projet.
 
-![config_avec_carte_ok](captures/config avec carte ok.png)
+![config avec carte ok](captures/config_avec_carte_ok.png)
 
 Si cette icône n'est pas présente, il y a probablement un problème de pilotes : essayez d'abord de redémarrer votre PC, puis si ça ne marche pas, vous pouvez tenter d'installer les pilotes à part : https://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-utilities/stsw-link009.html (Windows seulement).
 
@@ -79,13 +79,13 @@ Enfin, si vous voulez gagner un peu de place à l'écran, vous pouvez **cacher l
 
 Dans la barre supérieure, cliquez sur *File / New program...* La fenêtre suivante devrait s'afficher.
 
-![nouveau_projet_depuis_exemple](captures/nouveau projet depuis exemple.png)
+![nouveau projet depuis exemple](captures/nouveau_projet_depuis_exemple.png)
 
 Dans le menu déroulant "Example program", sélectionnez *mbed-os-example-blinky* sous *Mbed OS 6*. Laissez les autres champs par défaut et cliquez sur "Add Program".
 
 Mbed Studio va créer un nouveau programme dans votre workspace avec les fichiers exemples et y télécharger la bibliothèque Mbed OS. Quand il aura terminé (ce qui peut prendre quelques minutes), l'écran devrait ressembler à ce qui suit :
 
-![ecran_d_accueil_blinky](captures/écran d'accueil blinky.png)
+![écran d'accueil blinky](captures/ecran_d_accueil_blinky.png)
 
 Le fichier `README.md` s'affiche. Les instructions contenues concernent les gens qui compilent le projet à la main, donc vous pouvez les ignorer. En revanche, le fichier `main.cpp` est plus intéressant : ouvrez-le en cliquant dessus depuis le workspace.
 
@@ -208,7 +208,7 @@ Voilà, c'est tout ! Si vous ne l'avez pas encore deviné, ces quelques lignes p
 
 Dans la zone de configuration du projet, cliquez sur le bouton "Run program" indiqué ci-dessous.
 
-![blinky_config](captures/blinky config.png)
+![blinky config](captures/blinky_config.png)
 
 Cela devrait lancer la **compilation** dans l'onglet "Output" du panneau inférieur.
 
@@ -229,7 +229,7 @@ Le **terminal** s'affiche alors. Comme le programme n'écrit aucun message dans 
 
 Dans le code d'exemple, vous pouvez voir des **warnings** : les vaguelettes jaunes en-dessous de certaines parties du code. Ceux-ci sont très importants pour vous prévenir où des bogues vont probablement survenir, et aussi pour améliorer votre style et vous faire découvrir le langage. Cependant, par défaut, beaucoup trop de warnings sont produits. Vous pouvez supprimer les plus ennuyants en allant dans *File / Settings / Open Preferences* (ou <kbd>Ctrl</kbd>+<kbd>,</kbd>), puis *User > Cpp*, puis *Clang-Tidy Checks* et en remplaçant la ligne par `*,-fuchsia*,-modernize-use-auto,-modernize-use-trailing-return-type,-hicpp-vararg,-cppcoreguidelines-pro-type-vararg`.
 
-![clang-tidy_checks](captures/clang-tidy checks.png)
+![clang-tidy checks](captures/clang-tidy_checks.png)
 
 Malgré cette configuration, le warning à la ligne `led = !led;` devrait **encore être présent**. En effet, celui-ci utilise une **conversion implicite** entre entier et booléen, ce qui mène à de nombreux bogues difficiles à trouver en cas normal. Si vous voulez corriger ça, vous pouvez remplacer cette ligne par `led.write(1 - led.read());`.
 
@@ -250,11 +250,11 @@ Partons du projet blinky créé ci-dessus. Comme dit plus haut, Mbed Studio a pa
 
 Ensuite, dans le panneau inférieur, affichez l'onglet "Libraries". Ici, vous verrez une ligne indiquant "Mbed OS 6.3.0" (ou autre version). En passant la souris dessus, le bouton "Switch to shared" devrait apparaître : cliquez dessus.
 
-![switch_to_shared](captures/switch to shared.png)
+![switch to shared](captures/switch_to_shared.png)
 
 Dans la modale qui s'affiche, cliquez sur l'icône de dossier et sélectionnez le dossier mbed-os que vous venez de coller ailleurs.
 
-![shared_directory](captures/shared directory.png)
+![shared directory](captures/shared_directory.png)
 
 Note : si vous voulez changer de disque dans le menu de sélection de dossier, vous devez cliquer sur votre nom d'utilisateur en haut de la fenêtre.
 
@@ -271,7 +271,7 @@ Si vous n'avez pas de projet créé par défaut ou si vous avez besoin d'install
 
 Dans *File / New project...*, en bas de la fenêtre, cliquez sur le bouton "Link to an existing shared Mbed OS instance". Cliquez ensuite sur l'icône de dossier et sélectionnez le dossier où se trouve la bibliothèque.
 
-![new_project_shared_mbed_os](captures/new project shared mbed os.png)
+![new project shared mbed os](captures/new_project_shared_mbed_os.png)
 
 **C'est tout !** Mbed OS devrait s'occuper du reste.
 
