@@ -1,4 +1,4 @@
 # README
 
-Voir [../Utilisation du logiciel Mbed Studio.md](Utilisation du logiciel Mbed Studio)
+Voir [Utilisation du logiciel Mbed Studio](../Utilisation du logiciel Mbed Studio.md)
 
